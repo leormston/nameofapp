@@ -1,7 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+My name is louie and I am creating a simple app to demonstrate my ability to produce a consumer ready web application.
 
 Things you may want to cover:
 
