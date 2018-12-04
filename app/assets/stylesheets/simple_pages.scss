@@ -1,3 +1,45 @@
 // Place all the styles related to the simple_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+  font-family: sans-serif, arial;
+  font-size: 5vw;
+  text-align: center;
+  padding-top: 70px;
+}
+
+nav {
+  background-color: #455553;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 6px 14px 0 rgba(0,0,0,0.35);
+}
+
+nav a {
+    color: #D7D8D8;
+    font-size: 1.1rem;
+    font-family: 'Open Sans Condensed', sans-serif;
+    transition: 600ms ease;
+    -webkit-transition: 600ms ease;
+}
+
+nav a:hover, .active {
+    color: #ffffff;
+    letter-spacing: .01rem;
+}
+
+.my-image {
+  height: 500px;
+  width: 550px;
+}
+body {
+  background-color: #D7D8D8;
+  text-align: center;
+}
+
+footer {
+  padding: 10px 0px;
+  text-align: center;
+  background-color: #ABB3B2;
+  margin-top: 500px;
+}
