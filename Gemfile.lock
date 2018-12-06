@@ -156,7 +156,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
   jquery-rails
-  pg
+  pg (~> 0.20)
   puma (~> 3.0)
   rails (~> 5.0.1)
   sass-rails (~> 5.0)
@@ -167,4 +167,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.16.6
+   1.17.1
