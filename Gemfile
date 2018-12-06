@@ -35,16 +35,16 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :production do
-  gem 'pg'
+    gem 'pg', '~> 0.20'
 end
-
-gem 'listen', '~>3.1.5'
 
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'listen', '~>3.1.5'
 
   gem 'sqlite3', '~> 1.3.4'
+
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
