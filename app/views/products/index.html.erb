@@ -2,30 +2,25 @@
 
 <h1>Products</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Image url</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= product.name %></td>
-        <td><%= product.description %></td>
-        <td><%= product.image_url %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <br>
 
+<div class="container">
+  <div class="row">
+    <% @products.each do |product| %>
+      <div class="col-6 col-sm-3" id="prod_box">
+        <%= image_tag(product.image_url, class: "img-responsive" ) %>
+        <a href="#" id="product_title"><%= product.name %></a>
+        <p><%= product.description %></p>
+        <p id="price"><%= product.avgprice %></p>
+        <%= link_to 'Show', product %>
+        <%= link_to 'Edit', edit_product_path(product) %>
+        <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+  </div>
+</div>
 <%= link_to 'New Product', new_product_path %>
+
+<!-- Product.create(name: "Nvidia Geforce GTX 1080", description: "Very good - dupeitem", image_url="1080 card.png", avgprice: 999.999)
+Product.create(name: "Nvidia Geforce GTX 1080", description: "Very good - dupeitem", image_url: "1080 card.png", avgprice: 999.999) -->
