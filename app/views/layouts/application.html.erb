@@ -11,12 +11,14 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Poppins" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700|Raleway:400,400i" rel="stylesheet">
     <%= csrf_meta_tags %>
   </head>
 
   <body>
     <nav class="navbar fixed-top navbar-expand-lg" role="navigation">
-      <a class="navbar-brand" href="#carousel">GPU MarketPlace</a>
+      <a class="navbar-brand" href="/simple_pages/index" id="titlebar">GPU MarketPlace</a>
       <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -24,10 +26,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">COMPARE <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/products">COMPARE <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">SHOP</a>
+            <a class="nav-link" href="/products">SHOP</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">CONTACT</a>

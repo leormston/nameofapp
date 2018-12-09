@@ -7,10 +7,11 @@ h1 {
   font-size: 5vw;
   text-align: center;
   padding-top: 70px;
+  color: #fbf3f3;
 }
 
 nav {
-  background-color: #455553;
+  background-color: #1C0032;
   font-family: 'Poppins', sans-serif;
   box-shadow: 0 6px 14px 0 rgba(0,0,0,0.35);
 }
@@ -18,7 +19,7 @@ nav {
 nav a {
     color: #D7D8D8;
     font-size: 1.1rem;
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Raleway', sans-serif;
     transition: 600ms ease;
     -webkit-transition: 600ms ease;
 }
@@ -28,13 +29,21 @@ nav a:hover, .active {
     letter-spacing: .01rem;
 }
 
+#titlebar {
+  font-style: italic;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
 .my-image {
   height: 500px;
   width: 550px;
 }
+
 body {
-  background-color: #D7D8D8;
+  background-color: #0F0417;
   text-align: center;
+  color: #fbf3f3;
 }
 
 footer {

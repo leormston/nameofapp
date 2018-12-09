@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Products</h1>
+<h1>OUR CARDS</h1>
 
 
-<br>
+
 
 <div class="container">
   <div class="row">
     <% @products.each do |product| %>
       <div class="col-6 col-sm-3" id="prod_box">
-        <%= image_tag(product.image_url, class: "img-responsive" ) %>
+        <%= image_tag(product.image_url, class: "img-responsive") %>
         <a href="#" id="product_title"><%= product.name %></a>
         <p><%= product.description %></p>
         <p id="price"><%= product.avgprice %></p>
@@ -23,4 +23,4 @@
 <%= link_to 'New Product', new_product_path %>
 
 <!-- Product.create(name: "Nvidia Geforce GTX 1080", description: "Very good - dupeitem", image_url="1080 card.png", avgprice: 999.999)
-Product.create(name: "Nvidia Geforce GTX 1080", description: "Very good - dupeitem", image_url: "1080 card.png", avgprice: 999.999) -->
+Product.create(name: "Nvidia Geforce GTX 1080", description: "Very good - dupeitem", image_url: "1080 card.png", avgprice: 999.999)
