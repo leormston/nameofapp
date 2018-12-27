@@ -9,13 +9,7 @@
   <div class="row">
     <% @products.each do |product| %>
       <div class="col-6 col-sm-3" id="prod_box">
-        <%= image_tag(product.image_url, class: "img-responsive") %>
-        <a href="#" id="product_title"><%= product.name %></a>
-        <p><%= product.description %></p>
-        <p id="price"><%= product.avgprice %></p>
-        <%= link_to 'Show', product %>
-        <%= link_to 'Edit', edit_product_path(product) %>
-        <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= render product %>
       </div>
     <% end %>
   </div>
