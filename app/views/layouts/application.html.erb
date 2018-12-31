@@ -29,6 +29,15 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
+            <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
+
+              <div id="searchspacing">
+                <%= form.text_field :q, id: 'q', value: params[:q]%>
+                <%= form.submit 'Search', class: "btn-group btn-group-lg", role:"group" %>
+              </div>
+            <% end %>
+          </li>
+          <li class="nav-item">
             <%= link_to "SHOP", products_path, class: "nav-link"%>
           </li>
           <li class="nav-item">

@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+ .btn-group-lg {
+   background-color: #1C0032;
+   color: #D7D8D8;
+   font-size: 1.1rem;
+   font-family: 'Raleway', sans-serif;
+   padding: 7px;
+ }
+
+ #searchspacing {
+   padding-right: 30px;
+ }
+
+ #searchspacing #q {
+   padding-bottom: 7px;
+ }

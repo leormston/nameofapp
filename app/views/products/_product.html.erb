@@ -3,6 +3,6 @@
 <p><%= product.description %></p>
 <p id="price"><%= product.avgprice %></p>
 
-<%= link_to 'Show', product %>
-<%= link_to 'Edit', edit_product_path(product) %>
-<%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+<p id="formbutton"><%= link_to 'Show', product %></p>
+<p id="formbutton"><%= link_to 'Edit', edit_product_path(product) %></p>
+<p id="formbutton"><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></p> 
