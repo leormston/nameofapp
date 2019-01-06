@@ -121,7 +121,7 @@ body {
 
   }
   .carousel-logo {
-    display: inline
+    display: inline;
     padding-top: 20px;
     width: 100%;
   }
@@ -133,13 +133,6 @@ body {
   border-radius: 20px;
 }
 
-#product_title {
-
-}
-
-#product_description {
-
-}
 
 #product_price {
   display: inline;
