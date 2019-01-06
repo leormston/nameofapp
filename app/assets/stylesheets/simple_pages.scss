@@ -40,12 +40,6 @@ nav a:hover, .active {
   width: 550px;
 }
 
-body {
-  background-color: #0F0417;
-  text-align: center;
-  color: #fbf3f3;
-}
-
 footer {
   padding: 10px 0px;
   text-align: center;
@@ -68,4 +62,9 @@ footer {
 
 #paramexample {
   color: white;
+}
+
+#LatestProductsHeader {
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
 }

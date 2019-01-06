@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -16,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Poppins" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:700|Raleway:400,400i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <%= csrf_meta_tags %>
   </head>
@@ -75,55 +77,67 @@
       <div id="mainside">
         <span>
           <i class="fas fa-home"></i>
-          HOME
+          <%= link_to "HOME", simple_pages_index_path%>
         </span>
         <span>
           <i class="fas fa-store-alt"></i>
-          STORE
+          <%= link_to "STORE", products_path%>
         </span>
         <span>
           <i class="fas fa-fire"></i>
-          HOT
+          <%= link_to "HOT", products_path%>
         </span>
         <span>
           <i class="fas fa-bolt"></i>
-          DEALS
+          <%= link_to "DEALS", products_path%>
         </span>
       </div>
       <br>
       <div id="accountside">
         <span>
-          <i class="fas fa-home"></i>
+          <i class="fas fa-user-circle"></i>
           ACCOUNT
         </span>
         <span>
-          <i class="fas fa-home"></i>
+          <i class="fas fa-folder-open"></i>
           ORDERS
         </span>
         <span>
-          <i class="fas fa-home"></i>
-          LOGOUT
+          <i class="fas fa-sign-in-alt"></i>
+          <%if user_signed_in? %>
+          <%= link_to('LOGOUT', destroy_user_session_path, method: :delete) %>
+          <%else%>
+            <%= link_to('LOGIN', new_user_session_path)%>
+          <% end %>
         </span>
       </div>
       <br>
       <div id="contactside">
         <span>
-          <i class="fas fa-home"></i>
-          CONTACT
+          <i class="fas fa-phone"></i>
+          <%= link_to "CONTACT", simple_pages_contact_path%>
         </span>
         <span>
-          <i class="fas fa-home"></i>
-          ABOUT
+          <i class="fas fa-question"></i>
+          <%= link_to "ABOUT", simple_pages_about_path%>
+        </span>
+      </div>
+      <div id="adminside">
+        <span>
+          <i class="fas fa-unlock-alt"></i>
+          <%= link_to "ADMIN", simple_pages_admin_path%>
         </span>
       </div>
     </div>
+  </div>
     <div id="pagecontentcustom">
       <%= yield %>
+      <footer>
+        &copy; 2018 GPU MarketPlace
+      </footer>
     </div>
 
-    <footer>
-      &copy; 2018 GPU MarketPlace
-    </footer>
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 

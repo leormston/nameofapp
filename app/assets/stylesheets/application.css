@@ -74,21 +74,29 @@ body {
 
 #accountside,
 #mainside,
-#contactside {
+#contactside,
+#adminside {
   padding: 20px 0px;;
   text-align: left;
 }
 
-#contactside {
-  padding-bottom: 400px;
+#adminside {
+  padding-bottom: 2000px;
 }
 
-@media (max-device-width: 1080px) {
-  #sidebar_button,
-  #sidebar {
-    display: none;
-  }
+#sidebar span:hover, .active {
+    color: darkgrey;
+    letter-spacing: .01rem;
+    background-color: white;
+    padding: 10px 20px;
+}
 
+.under-carousel-logo {
+  display: none;
+}
+
+
+@media (max-device-width: 1080px) {
   #navbarlogo {
     margin-top: 0;
     margin-bottom: 0;
@@ -97,4 +105,60 @@ body {
 
 #pagecontentcustom {
   padding-left: 253.36px
+}
+
+@media (max-device-width: 1080px) {
+  #sidebar_button,
+  #sidebar {
+    display: none;
+  }
+  #pagecontentcustom {
+    padding-left: 0px;
+    padding-top: 30px;
+  }
+  #myCarousel {
+    display: none;
+
+  }
+  .carousel-logo {
+    display: inline
+    padding-top: 20px;
+    width: 100%;
+  }
+}
+
+.productbackdrop {
+  background-color: #E5E5E5;
+  border: white solid 10px;
+  border-radius: 20px;
+}
+
+#product_title {
+
+}
+
+#product_description {
+
+}
+
+#product_price {
+  display: inline;
+}
+
+button {
+  float: right;
+}
+
+#moreinfobutton {
+  background-color: #580541;
+  border: #580541
+}
+
+#product_title:hover, .active,
+#product_description:hover, .active,
+#product_price:hover, .active,
+#moreinfobutton:hover, .active {
+    color: #A00976;
+    letter-spacing: .01rem;
+    background-color: white;
 }

@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1>OUR CARDS</h1>
 
 
@@ -10,11 +8,13 @@
     <% @products.each do |product| %>
       <div class="col-6 col-sm-3 productbackdrop">
         <%= render product %>
+        <p id="formbutton"><%= link_to 'Show', product %></p>
+        <p id="formbutton"><%= link_to 'Edit', edit_product_path(product) %></p>
+        <p id="formbutton"><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
       </div>
     <% end %>
   </div>
 </div>
+
 <%= link_to 'New Product', new_product_path %>
 <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-<!-- Product.create(name: "Nvidia Geforce GTX 1080", description: "Very good - dupeitem", image_url="1080 card.png", avgprice: 999.999)
-Product.create(name: "Nvidia Geforce GTX 1080", description: "Very good - dupeitem", image_url: "1080 card.png", avgprice: 999.999)

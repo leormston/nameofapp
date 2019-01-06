@@ -1,4 +1,59 @@
-<h1>Welcome to GPU MarketPlace</h1>
-<h2>Best place on the internet for used graphics cards</h2>
+
+<!--CAROUSEL-->
 <!-- <p>Find me in app/views/simple_pages/index.html.erb</p>
 <p>Welcome! The date and time is <%= Time.now %></p> -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <%= image_tag("cover image.png", class: "d-block w-100", alt:"First Slide", height:"400px;", id:"mobilecarousel")%>
+      <div class="carousel-caption d-none d-md-block">
+        <%= image_tag("GPUMP Logo.png", class:"carousel-logo") %>
+        <h3>THE BEST PLACE TO BUY GPU's</h3>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag("cover image.png", class: "d-block w-100", alt:"First Slide", height:"400px;", id:"mobilecarousel")%>
+      <div class="carousel-caption d-none d-md-block">
+        <%= image_tag("GPUMP Logo.png", class:"carousel-logo") %>
+        <h3>THE BEST PLACE TO BUY GPU's</h3>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <%=image_tag("cover image.png", class: "d-block w-100", alt:"First Slide", height:"400px;", id:"mobilecarousel")%>
+      <div class="carousel-caption d-none d-md-block">
+        <%= image_tag("GPUMP Logo.png", class:"carousel-logo") %>
+        <h3>THE BEST PLACE TO BUY GPU's</h3>
+      </div>
+    </div>
+  </div>
+
+  <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<%= image_tag("GPUMP Logo.png", class:"under-carousel-logo") %>
+<br>
+<h2 id="LatestProductsHeader">LATEST PRODUCTS</h2>
+<hr>
+<div class= "row">
+  <% @products.each do |product| %>
+    <div class="col-6 col-sm-3 productbackdrop">
+      <%= image_tag(product.image_url, class: "img-responsive productimage") %>
+      <a href="#" id="product_title"><%= product.name %></a>
+      <a id="product_description"><%= product.description %></a>
+      <h5 id="product_price">£<%= product.avgprice %></h5>
+      <button type="button"class="btn btn-info" id="moreinfobutton">More Info</button>
+
+    </div>
+    <%end%>
+  </div>

@@ -17,9 +17,7 @@ h1 {
   font-style: italic;
 }
 
-.row {
-  border: 5px solid #A79BCB;
-}
+
 
 #price {
   color: #455553;
@@ -33,24 +31,13 @@ h1 {
   font-size: 1.2rem;
 }
 @media (max-device-width: 1080px) {
-  #formbutton {
-    visibility: hidden;
-  }
-  #product_title {
-    font-size: 0.8rem;
-    color: white;
-    font-style: oblique;
-  }
 
-  #price {
-    color: #455553;
-    font-size: 0.8rem;
-  }
-
-  #product_description {
-    font-size: 0.6rem;
-  }
   .productimage {
     height: 45%;
+  }
+  text-align: center;
+  button {
+    display: block;
+    align-items: center;
   }
 }

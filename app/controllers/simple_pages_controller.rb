@@ -1,9 +1,12 @@
 class SimplePagesController < ApplicationController
   def index
-    @products = Product.limit(3)
+    @products = Product.limit(8)
   end
   def landing_page
-    @products = Product.limit(3)
+    @products = Product.limit(8)
+  end
+  def admin
+    @products = Product.all
   end
   def thank_you
   @name = params[:name]
