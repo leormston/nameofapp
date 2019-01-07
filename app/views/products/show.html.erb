@@ -26,12 +26,16 @@
 <h2>Highest rated Comment:</h2>
 <hr>
 <p>
-  <%= @product.highest_rating_comment.body %>
+<% commenttext = Comment.where(product: @product)%>
+<%commenttext = commenttext.pluck(:body)%>
+<%=commenttext[1]%>
 </p>
-<h2>All Comments</h2>
+<h2>Top 3 Comments</h2>
 <hr>
 <p>
-  <%= Comment.where(product: @product).pluck(:body) %>
+<%=commenttext[1]%>
+<%=commenttext[2]%>
+<%=commenttext[3]%>
 </p>
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
