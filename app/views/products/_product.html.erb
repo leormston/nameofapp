@@ -1,5 +1,7 @@
 <%= image_tag(product.image_url, class: "img-responsive productimage") %>
-<a href="#" id="product_title"><%= product.name %></a>
+<a href="products/<%=product.id %>" id="product_title"><%= product.name %></a>
 <p id="product_description"><%= product.description %></p>
 <h5 id="product_price">£<%= product.avgprice %></h5>
-<button type="button"class="btn btn-info" id="moreinfobutton">More Info</button>
+<a href="products/<%=product.id%>">
+  <button   type="button"class="btn btn-info" id="moreinfobutton">More Info</button>
+</a>

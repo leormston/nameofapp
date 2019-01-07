@@ -104,7 +104,8 @@ body {
 }
 
 #pagecontentcustom {
-  padding-left: 253.36px
+  padding-left: 253.36px;
+  padding-top: 100px;
 }
 
 @media (max-device-width: 1080px) {

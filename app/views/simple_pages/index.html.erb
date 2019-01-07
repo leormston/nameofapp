@@ -53,10 +53,12 @@
   <% @products.each do |product| %>
     <div class="col-6 col-sm-3 productbackdrop">
       <%= image_tag(product.image_url, class: "img-responsive productimage") %>
-      <a href="#" id="product_title"><%= product.name %></a>
+      <a href="../products/<%=product.id%>" id="product_title"><%= product.name %></a>
       <a id="product_description"><%= product.description %></a>
       <h5 id="product_price">£<%= product.avgprice %></h5>
-      <button type="button"class="btn btn-info" id="moreinfobutton">More Info</button>
+      <a href="../products/<%=product.id%>">
+        <button   type="button"class="btn btn-info" id="moreinfobutton">More Info</button>
+      </a>
 
     </div>
     <%end%>

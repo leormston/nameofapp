@@ -1,25 +1,38 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+<div class="row">
+  <div class="col-12 col-sm-4">
+    <%= image_tag(@product.image_url, class: "img-responsive productbackdrop", ) %>
+  </div>
+  <div class="col-12 col-sm-8">
+    <h2>
+      <%= @product.name %>
+    </h2>
+    <hr>
+    <p>
+      <strong>Description:</strong>
+      <br>
+      <%= @product.description %>
+    </p>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
-</p>
+    <h4 align="center">
+      <strong>Price: </strong>
+      <%= @product.avgprice %>
+    </h4>
+  </div>
+</div>
 
+<h2>Highest rated Comment:</h2>
+<hr>
 <p>
-  <strong>Average Price: </strong>
-  <%= @product.avgprice %>
+  <%= @product.highest_rating_comment.body %>
 </p>
-
+<h2>All Comments</h2>
+<hr>
+<p>
+  <%= Comment.where(product: @product).pluck(:body) %>
+</p>
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
 <%= link_to 'Home', simple_pages_index_path%>

@@ -3,5 +3,6 @@ class ApplicationController < ActionController::Base
     @products = Product.all
     @posts = Post.all
     @users = User.all
+    @comments= Comment.all
   end
 end
