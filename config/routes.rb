@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
+  post '/rate' => 'rater#create', :as => 'rate'
   devise_for :users
   resources :users
   resources :products
   resources :orders, only: [:index, :show, :create, :destroy]
+  resources :products do
+    resources :comments
+  end
+
+
   get 'simple_pages/about'
   get 'simple_pages/contact'
   get 'simple_pages/index'

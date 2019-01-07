@@ -10,6 +10,12 @@
       <%= @product.name %>
     </h2>
     <hr>
+    <%allrating = Comment.where(product: @product).pluck(:rating)%>
+    <%arraylength = allrating.length%>
+    <%if arraylength > 0%>
+    <%avgrating = allrating.sum / arraylength%>
+    <%end%>
+    <p><div class="rated" data-score="<%= avgrating %>"></div> </p>
     <p>
       <strong>Description:</strong>
       <br>
@@ -25,18 +31,24 @@
 
 <h2>Highest rated Comment:</h2>
 <hr>
-<p>
-<% commenttext = Comment.where(product: @product)%>
-<%commenttext = commenttext.pluck(:body)%>
-<%=commenttext[1]%>
-</p>
-<h2>Top 3 Comments</h2>
+
+
+<p><%=Product.first.highest_rating_comment.created_at%></p>
+<div class="rated" data-score="<%=Product.first.highest_rating_comment.rating%>"></div>
+<p><%=Product.first.highest_rating_comment.body%></p>
+
+
+<h2>Top Comments</h2>
 <hr>
-<p>
-<%=commenttext[1]%>
-<%=commenttext[2]%>
-<%=commenttext[3]%>
-</p>
+<%Comment.where(product: @product).pluck(:created_at, :rating, :body).each do |commentarray|%>
+<p> <%= commentarray[0]%> </p>
+<div class="rated" data-score="<%= commentarray[1]%>"></div>
+<p> <%= commentarray[2]%> </p>
+<hr>
+<%end%>
+
+<%= render 'new_comment'%>
+
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
 <%= link_to 'Home', simple_pages_index_path%>
