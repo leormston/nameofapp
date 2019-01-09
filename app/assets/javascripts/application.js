@@ -32,3 +32,6 @@ $("#sidebar_show_button").on("click", function() {
 
 
 })
+
+
+$(".alert").delay(1000).fadeOut(400)

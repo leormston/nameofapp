@@ -14,6 +14,7 @@
     <%arraylength = allrating.length%>
     <%if arraylength > 0%>
     <%avgrating = allrating.sum / arraylength%>
+    <%avgrating = avgrating.to_f%>
     <%end%>
     <p><div class="rated" data-score="<%= avgrating %>"></div> </p>
     <p>
@@ -33,9 +34,9 @@
 <hr>
 
 
-<p><%=Product.first.highest_rating_comment.created_at%></p>
-<div class="rated" data-score="<%=Product.first.highest_rating_comment.rating%>"></div>
-<p><%=Product.first.highest_rating_comment.body%></p>
+<p><%=@product.highest_rating_comment.created_at%></p>
+<div class="rated" data-score="<%=@product.highest_rating_comment.rating%>"></div>
+<p><%=@product.highest_rating_comment.body%></p>
 
 
 <h2>Top Comments</h2>
@@ -46,8 +47,8 @@
 <p> <%= commentarray[2]%> </p>
 <hr>
 <%end%>
-
 <%= render 'new_comment'%>
+
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
