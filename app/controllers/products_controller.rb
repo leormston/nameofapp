@@ -16,6 +16,7 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @comments = Comment.all
+    @users = User.all
   end
 
   def admin
