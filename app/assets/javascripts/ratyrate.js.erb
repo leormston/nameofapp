@@ -40,7 +40,7 @@ $(function(){
       click: function(score, evt) {
         var _this = this;
         if (score == null) { score = 0; }
-        $.post('https://gpu-marketplace.herokuapp.com/rate',
+        $.post('<%= Rails.application.class.routes.url_helpers.rate_path %>',
         {
           score: score,
           dimension: $(this).attr('data-dimension'),
