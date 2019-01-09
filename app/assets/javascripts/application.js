@@ -14,10 +14,11 @@
 //= require activestorage
 //= require turbolinks
 //= require jquery3
-//= require jquery
+//= require jquery3
 //= require jquery_ujs
+//= require jquery.raty.js
 //= require_tree .
-//= require_tree ../../../vendor/assets/javascripts
+//= require_tree
 
 $("#sidebar_hide_button").on("click", function() {
   $( "#sidebar" ).css("display", "none");
