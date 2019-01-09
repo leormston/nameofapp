@@ -1,15 +1,15 @@
 $(document).on('turbolinks:load', function(){
   $('.rating').raty({
     scoreName: 'comment[rating]',
-    starHalf: "<%= asset_path '/star-half.png' %>",
-    starOff: "<%= asset_path '/star-off.png' %>",
-    starOn: "<%= asset_path '/star-on.png' %>"
+    starHalf: "<%= asset_path 'star-half.png', skip_pipeline: true %>",
+    starOff: "<%= asset_path 'star-off.png', skip_pipeline: true%>",
+    starOn: "<%= asset_path 'star-on.png', skip_pipeline: true %>"
   });
 
   $('.rated').raty({
-    starHalf: "<%= asset_path '/star-half.png' %>",
-    starOff: "<%= asset_path '/star-off.png' %>",
-    starOn: "<%= asset_path '/star-on.png' %>",
+    starHalf: "<%= asset_path 'star-half.png', skip_pipeline: true%>",
+    starOff: "<%= asset_path 'star-off.png', skip_pipeline: true%>",
+    starOn: "<%= asset_path 'star-on.png', skip_pipeline: true%>",
     readOnly: true,
     score: function() {
       return $(this).attr('data-score');
