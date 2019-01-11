@@ -1,0 +1,12 @@
+<h2>All Comments </h2>
+<hr>
+<% @comments.where(product: @product).pluck(:created_at, :rating, :body).each do |comment|%>
+<p> <%= comment[0]%> </p>
+<div class="rated" data-score="<%= comment[1]%>"></div>
+<p> <%= comment[2]%> </p>
+<hr>
+<%end%>
+
+
+<%= will_paginate @comments, renderer: BootstrapPagination::Rails %>
+<hr>

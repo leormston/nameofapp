@@ -32,12 +32,15 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+gem 'will_paginate-bootstrap'
 
 gem 'devise'
 
 gem 'ratyrate'
 
 gem 'cancancan', '~> 1.10'
+
+gem 'will_paginate', '~> 3.1.0'
 
 group :production do
   gem 'pg', '~> 0.20'

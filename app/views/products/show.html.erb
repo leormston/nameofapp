@@ -8,15 +8,7 @@
     <h2>
       <%= @product.name %>
     </h2>
-    <hr>
-    <%allrating = Comment.where(product: @product).pluck(:rating)%>
-    <%arraylength = allrating.length%>
-    <%if arraylength > 0%>
-    <%avgrating = allrating.sum / arraylength%>
-    <%avgrating = avgrating.to_f%>
-    <%end%>
-    <p><div class="rated" data-score="<%= avgrating %>"></div> </p>
-    <p>
+    <%= render 'avg_star'%>
       <strong>Description:</strong>
       <br>
       <%= @product.description %>
@@ -29,23 +21,12 @@
   </div>
 </div>
 
-<h2>Highest rated Comment:</h2>
-<hr>
 
-<%unless @product.highest_rating_comment.nil? %>
-<p><%=@product.highest_rating_comment.created_at%></p>
-<div class="rated" data-score="<%=@product.highest_rating_comment.rating%>"></div>
-<p><%=@product.highest_rating_comment.body%></p>
-<%end%>
 
-<h2>Top Comments</h2>
-<hr>
-<%Comment.where(product: @product).pluck(:created_at, :rating, :body).each do |commentarray|%>
-<p> <%= commentarray[0]%> </p>
-<div class="rated" data-score="<%= commentarray[1]%>"></div>
-<p> <%= commentarray[2]%> </p>
-<hr>
-<%end%>
+<%= render 'top_comments'%>
+
+<%= render 'all_comments'%>
+
 <%= render 'new_comment'%>
 
 
