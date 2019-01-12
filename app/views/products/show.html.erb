@@ -2,7 +2,7 @@
 
 <div class="row">
   <div class="col-12 col-sm-4">
-    <%= image_tag(@product.image_url, class: "img-responsive productbackdrop", ) %>
+    <%= image_tag(@product.image_url, class: "img-responsive productimage") %>
   </div>
   <div class="col-12 col-sm-8">
     <h2>
@@ -14,10 +14,10 @@
       <%= @product.description %>
     </p>
 
-    <h4 align="center">
-      <strong>Price: </strong>
+    <h6 >
+      <strong>Price: £</strong>
       <%= @product.avgprice %>
-    </h4>
+    </h6>
   </div>
 </div>
 

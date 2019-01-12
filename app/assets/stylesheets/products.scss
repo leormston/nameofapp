@@ -1,20 +1,14 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.img-responsive {
-  width: 100%;
-  height : 60%;
-  padding-bottom: 10px;
-}
 
 #product_title {
   font-size: 1.4rem;
 }
 
 h1 {
-  font-family: 'Raleway', sans-serif;
-  color: #D7D8D8;
-  font-style: italic;
+  font-family: 'Poppins', sans-serif;
+  color: #455553;
 }
 
 
@@ -33,7 +27,8 @@ h1 {
 @media (max-device-width: 1080px) {
 
   .productimage {
-    height: 45%;
+    display: block;
+    width: 100%;
   }
   text-align: center;
   button {

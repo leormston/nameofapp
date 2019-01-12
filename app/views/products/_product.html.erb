@@ -5,3 +5,14 @@
 <a href="products/<%=product.id%>">
   <button   type="button"class="btn btn-info" id="moreinfobutton">More Info</button>
 </a>
+<hr>
+<%if signed_in? && current_user.admin?%>
+  <span>
+    <p><i class="fas fa-edit"></i>
+      <%= link_to 'Edit', edit_product_path(product) %></p>
+
+    <p>
+      <i class="fas fa-trash-alt"></i>
+      <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  </span>
+<%end%>

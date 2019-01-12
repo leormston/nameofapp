@@ -82,7 +82,7 @@ body {
   text-align: left;
 }
 
-#adminside {
+#contactside {
   padding-bottom: 2000px;
 }
 
@@ -128,12 +128,18 @@ body {
     padding-top: 20px;
     width: 100%;
   }
+  #moreinfobutton,
+  #product_description{
+    display: none;
+
+  }
 }
 
 .productbackdrop {
   background-color: #E5E5E5;
   border: white solid 10px;
   border-radius: 20px;
+  text-align: center;
 }
 
 
@@ -147,7 +153,16 @@ button {
 
 #moreinfobutton {
   background-color: #580541;
-  border: #580541
+  border: #580541;
+  float: right;
+  position: relative;
+  bottom: 1%;
+  width: 100%;
+
+}
+
+.productbackdrop:hover, .active {
+  background-color: lightgrey;
 }
 
 #product_title:hover, .active,
@@ -161,4 +176,10 @@ button {
 
 #welcome_alert {
   text-align: center;
+}
+
+.productimage {
+  display: block;
+  width: 100%;
+
 }
