@@ -2,13 +2,14 @@
 <form action="your-server-side-code" method="POST">
   <script
     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="pk_test_2J3Vl3S0V6MoZKdQ6BTS22CK"
+    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
 
     data-amount="<%=price%>"
-    data-name="GPU marketplace"
-    data-description="<%=@product.name%>"
+    data-name= "<%=@product.name%>"
+    data-description="<%=@product.description%>"
     data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
     data-locale="auto"
     data-currency="gbp">
   </script>
+
 </form>

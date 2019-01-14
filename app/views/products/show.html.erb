@@ -14,7 +14,8 @@
       <%= @product.description %>
     </p>
     <%= form_with(url: '/payments/create') do |form| %>
-      <%= render 'shared/stripe_checkout_button'%>
+      <%= render partial: 'shared/stripe_checkout_button'%>
+      <%= hidden_field_tag(:product_id, @product.id)%>
     <% end %>
     <h6 >
       <strong>Price: £</strong>

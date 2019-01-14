@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users
   resources :orders, only: [:index, :show, :create, :destroy]
+  resources :payments
   resources :products do
     resources :comments
 
@@ -16,5 +17,6 @@ Rails.application.routes.draw do
   root 'simple_pages#index'
   post 'simple_pages/thank_you'
   get 'simple_pages/admin'
+  post 'payments/create'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
