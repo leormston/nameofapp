@@ -13,7 +13,9 @@
       <br>
       <%= @product.description %>
     </p>
-
+    <%= form_with(url: '/payments/create') do |form| %>
+      <%= render 'shared/stripe_checkout_button'%>
+    <% end %>
     <h6 >
       <strong>Price: £</strong>
       <%= @product.avgprice %>
