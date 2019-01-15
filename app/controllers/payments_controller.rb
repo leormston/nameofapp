@@ -1,7 +1,13 @@
 class PaymentsController < ApplicationController
   before_action :authenticate_user!
+  def show
+    @user = current_user
+    @orders = Order.where(user_id: @user.email)
+    @products = Product.all
+  end
+
   def create
-    @product = Product.find(params[:product_id])
+    @product = Product.find((params[:product]).id)
     token = params[:stripeToken]
     # Create the charge on Stripe's servers - this will charge the user's card
     price = @product.avgprice.to_i*100
@@ -24,6 +30,6 @@ class PaymentsController < ApplicationController
       err = body[:error]
       flash[:error] = "Unfortunately, there was an error processing your payment: #{err[:message]}"
     end
-    redirect_to(payments_create_path)
+    redirect_to(payments_show_path)
   end
 end

@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   end
 
+  post 'payments/create'
+  get 'payments/show'
 
   get 'simple_pages/about'
   get 'simple_pages/contact'
@@ -17,6 +19,5 @@ Rails.application.routes.draw do
   root 'simple_pages#index'
   post 'simple_pages/thank_you'
   get 'simple_pages/admin'
-  post 'payments/create'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
