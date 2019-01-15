@@ -1,4 +1,4 @@
-<%= hidden_field_tag(:product, @product)%>
+
 <%price = @product.avgprice.to_i * 100%>
 <form action="your-server-side-code" method="POST">
   <script
@@ -11,6 +11,6 @@
     data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
     data-locale="auto"
     data-currency="gbp">
-  </script>
 
+  </script>
 </form>
