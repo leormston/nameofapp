@@ -13,4 +13,6 @@
     data-currency="gbp">
 
   </script>
+  <%id = @product.id%>
+  <%= hidden_field_tag(:product_id, id)%>
 </form>
