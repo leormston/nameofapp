@@ -1,4 +1,4 @@
-$(document).on('turbolinks:load', function(){
+var refreshRating = function () {
   $('.rating').raty({
     scoreName: 'comment[rating]',
     starHalf: "<%= asset_path 'star-half.png', skip_pipeline: true %>",
@@ -16,6 +16,10 @@ $(document).on('turbolinks:load', function(){
     }
   });
    $( '.star-rating' ).raty( 'reload' )
+}
+
+$(document).on('turbolinks:load ajaxSuccess', function(){
+  refreshRating();
 
   $('#img-zoom').elevateZoom();
 

@@ -1,20 +1,10 @@
 <h2>All Comments </h2>
-<hr>
-<% @comments.where(product: @product).pluck(:created_at, :rating, :body, :id).each do |comment|%>
-<p> <%= comment[0]%> </p>
-<div class="rated" data-score="<%= comment[1]%>"></div>
-<p> <%= comment[2]%> </p>
-<%comment_id = comment[3]%>
-<%if signed_in? && current_user.admin?%>
-  <span>
-    <i class="fas fa-trash-alt"></i>
-    <%= link_to 'Delete', product_comment_path(@product, comment_id), method: :delete, data: { confirm: 'Are you sure?' } %>
-  </span>
-<%end%>
-<hr>
-
-<%end%>
-
+<hb>
+<div class=".product-reviews">
+    <% @comments.each do |comment| %>
+      <%= render comment %>
+    <% end %>
+</div>
 
 <%= will_paginate @comments, renderer: BootstrapPagination::Rails %>
 <hr>
