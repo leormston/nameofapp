@@ -8,7 +8,6 @@ class RegistrationsController < Devise::RegistrationsController
     user = current_user
     @name = user.first_name
     @email = user.email
-    message = "123"
     UserMailer.signup_form(@email, @name).deliver_now
     ActionMailer::Base.mail(from: "l.e.ormston@gmail.com",
         to: @email,
