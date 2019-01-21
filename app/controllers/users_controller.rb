@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    
+
   end
 
   # GET /users/new
@@ -36,6 +36,15 @@ class UsersController < ApplicationController
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
+        @name = params[:name]
+        @email = params[:email]
+        message = "Welcome to GPU marketplace. Thank you for signing up #{@name}. We hope you have good time exploring the website"
+        UserMailer.signup_form(@email, @name, message).deliver_now
+        ActionMailer::Base.mail(from: "l.e.ormston@gmail.com",
+            to: @email,
+            subject: "A warm welcome from GPU marketplace",
+            body: message).deliver_now
+        
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
