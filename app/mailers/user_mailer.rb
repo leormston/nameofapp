@@ -13,5 +13,6 @@ class UserMailer < ApplicationMailer
       mail(from: 'l.e.ormston@gmail.com',
            to: @email,
            subject: "Welcome to GPU marketlpace #{name}")
+  end
 
 end
