@@ -8,8 +8,7 @@ class UserMailer < ApplicationMailer
          subject: "A new contact form message from #{name}")
   end
 
-  def signup_form(email, name, message)
-    @message = message
+  def signup_form(email, name)
       mail(from: 'l.e.ormston@gmail.com',
            to: @email,
            subject: "Welcome to GPU marketlpace #{name}")
