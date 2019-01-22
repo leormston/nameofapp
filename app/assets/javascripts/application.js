@@ -18,6 +18,7 @@
 //= require jquery.raty.js
 //= require_tree .
 //= require_tree
+//= require_redis
 
 $("#sidebar_hide_button").on("click", function() {
   $( "#sidebar" ).css("display", "none");
