@@ -7,9 +7,11 @@
 
 <div class="container">
   <div class="row">
-    <% @products.each do |product| %>
+    <%@products.each do |product| %>
       <div class="col-6 col-sm-3 productbackdrop">
-        <%= render product %>
+        <%cache (cache_key_for_products) do%>
+          <%= render product %>
+        <%end%>
       </div>
     <% end %>
   </div>
