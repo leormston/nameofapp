@@ -18,9 +18,9 @@ var refreshRating = function () {
    $( '.star-rating' ).raty( 'reload' )
 }
 
-$(document).on('turbolinks:load ajaxSuccess', function(){
+$(document).on('turbolinks:load ', function(){
   refreshRating();
 
-  $('#img-zoom').elevateZoom();
+$('#img-zoom').elevateZoom();
 
 });

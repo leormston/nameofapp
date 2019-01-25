@@ -20,9 +20,11 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <%= csrf_meta_tags %>
+
   </head>
 
   <body>
+
     <nav class="navbar fixed-top navbar-expand-lg" role="navigation">
 
       <div id="sidebar_button">
@@ -125,13 +127,16 @@
     </div>
   </div>
     <div id="pagecontentcustom">
+      <% if flash[:success] %>
+        <div class="alert alert-success" role="alert"><%= flash[:alert] %></div>
+      <% end %>
       <%= yield %>
       <footer>
         &copy; 2018 GPU MarketPlace
       </footer>
     </div>
+    <%= javascript_include_tag 'application'%>
 
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 
 
