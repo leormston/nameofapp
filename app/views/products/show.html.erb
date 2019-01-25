@@ -1,5 +1,9 @@
-<p id="notice"><%= notice %></p>
-
+<% if flash[:notice] %>
+  <div class="alert alert-warning" role="alert"><%= flash[:notice] %></div>
+<% end %>
+<% if flash[:success] %>
+  <div class="alert alert-success" role="alert"><%= flash[:success] %></div>
+<% end %>
 <div class="row">
   <div class="col-12 col-sm-4">
     <%= image_tag(@product.image_url, class: "img-responsive productimage", id: "img-zoom", data_zoom_image: @product.image_url) %>
