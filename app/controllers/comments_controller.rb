@@ -6,10 +6,11 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
+        ActionCable.server.broadcast 'product_channel', comment: @comment 
         format.html {redirect_to @product, success: 'Review was created successfully.'}
         format.json {render :show, status: :created, location: @product}
         format.js
-        
+
       else
         format.html { redirect_to @product, notice: 'Review was not saved successfully.' }
         format.json { render json: @comment.errors, status: :unprocessable_entity }

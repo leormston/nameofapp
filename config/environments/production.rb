@@ -92,5 +92,9 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+  config.web_socket_server_url = "wss://your-app-name.herokuapp.com/cable"
+
+  config.action_cable.allowed_request_origins = ['https://ygpu-marketplace.herokuapp.com', 'http://gpu-marketplace.herokuapp.com']
+
   config.action_mailer.default_url_options = { host: 'gpu-marketplace.herokuapp.com/' }
 end

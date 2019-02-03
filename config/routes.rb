@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   end
 
+  mount ActionCable.server => '/cable'
+
   post 'payments/create'
   get 'payments/show'
 
