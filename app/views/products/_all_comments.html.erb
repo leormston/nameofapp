@@ -1,7 +1,7 @@
 <h2>All Comments </h2>
 <hb>
 <div class=".product-reviews">
-    <% @comments.each do |comment| %>
+    <% @comments.reverse_order.each do |comment| %>
       <%= render comment %>
     <% end %>
 </div>
