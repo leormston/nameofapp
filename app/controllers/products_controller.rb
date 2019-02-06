@@ -18,8 +18,8 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @comments = Comment.paginate(:page => params[:page], per_page: 4)
-
-    @users = User.all
+    $redis.set(@users, User.all)
+    @users = $redis.get(@users)
   end
 
   def admin
