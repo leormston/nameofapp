@@ -14,7 +14,6 @@
 //= require jquery3
 //= require jquery.raty.js
 //= require_tree .
-//= require_tree
 //= require_redis
 
 
