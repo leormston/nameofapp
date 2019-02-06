@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        ActionCable.server.broadcast 'product_channel', comment: @comment 
+        ActionCable.server.broadcast 'product_channel', comment: @comment
         format.html {redirect_to @product, success: 'Review was created successfully.'}
         format.json {render :show, status: :created, location: @product}
         format.js
@@ -17,6 +17,7 @@ class CommentsController < ApplicationController
       end
     end
   end
+
   def destroy
     @comment = Comment.find(params[:id])
     product = @comment.product
