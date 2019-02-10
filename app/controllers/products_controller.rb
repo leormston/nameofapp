@@ -33,7 +33,12 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
-    @products = Product.all
+    if current_user.admin
+      @products = Product.all
+    else
+      format.html { redirect_to @product, notice: 'No accesso to that pago' }
+    end
+
   end
 
 
