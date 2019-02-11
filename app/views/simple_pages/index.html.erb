@@ -44,7 +44,7 @@
 <br>
 <h2 id="LatestProductsHeader">LATEST PRODUCTS</h2>
 <hr>
-<div class= "row">
+<div class= "row" id="homeproductsrow">
   <% @products.each do |product| %>
     <div class="col-6 col-sm-3 productbackdrop">
       <%= image_tag(product.image_url, class: "img-responsive productimage") %>

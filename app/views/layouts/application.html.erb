@@ -24,13 +24,6 @@
 
     <nav class="navbar fixed-top navbar-expand-lg" role="navigation">
 
-      <div id="sidebar_button">
-        <li class="navbar-brand" >
-          <a id="sidebar_hide_button">HIDE |</a>
-          <a id="sidebar_show_button">| SHOW</a>
-        </li>
-      </div>
-
       <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -45,9 +38,7 @@
           <li class="nav-item">
             <%= link_to "CONTACT", simple_pages_contact_path, class: "nav-link"%>
           </li>
-          <li class="nav-item">
-            <%= link_to "ABOUT", simple_pages_about_path, class: "nav-link"%>
-          </li>
+      
           <li class="nav-item">
             <%= form_with(url: products_path, method: 'get', local: true) do |form| %>
 
@@ -121,8 +112,11 @@
           <%= link_to "ABOUT", simple_pages_about_path%>
         </span>
       </div>
+      <div id="sidenavbarbuttoncontainer">
+        <button type="button" id="sidebar_hide_button" onclick="hideSideBar();"><i class="far fa-eye-slash"></i>Hide Sidebar! < < < <</button>
+      </div>
     </div>
-  </div>
+    <button type="button" id="sidebar_show_button" onclick="showSideBar();"><i class="fas fa-eye"></i>Show Sidebar > > > > </button>
     <div id="pagecontentcustom">
       <% if flash[:success] %>
         <div class="alert alert-success" role="alert"><%= flash[:alert] %></div>
