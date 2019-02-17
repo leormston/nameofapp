@@ -4,7 +4,7 @@
 <% if flash[:success] %>
   <div class="alert alert-success" role="alert"><%= flash[:success] %></div>
 <% end %>
-<div class="row" data-product-id="<%= @product.id %>"> 
+<div class="row" data-product-id="<%= @product.id %>">
 
   <div class="col-12 col-sm-4">
     <%= image_tag(@product.image_url, class: "img-responsive productimage", id: "img-zoom", data_zoom_image: @product.image_url) %>
@@ -28,7 +28,6 @@
       <%= @product.avgprice %>
     </h6>
     <hr>
-    data-product-id= "<%= @product.id %>"
   </div>
 
 </div>
