@@ -8,7 +8,11 @@ class CommentUpdateJob < ApplicationJob
   private
 
     def render_comment(comment, current_user)
-      CommentsController.render(partial: 'comments/comment', locals: { comment: comment, current_user: current_user })
+      renderer = ::CommentsController.renderer.new
+      renderer_env = renderer.instance_eval { @env }
+      warden = ::Warden::Proxy.new(renderer_env, ::Warden::Manager.new(Rails.application))
+      renderer_env["warden"] = warden
+      renderer.render(partial: 'comments/comment', locals: { comment: comment, current_user: current_user })
     end
 
 end
