@@ -1,9 +1,0 @@
-<hr>
-<%allrating = Comment.where(product: @product).pluck(:rating)%>
-<%arraylength = allrating.length%>
-<%if arraylength > 0%>
-<%avgrating = allrating.sum / arraylength%>
-<%avgrating = avgrating.to_f%>
-<%end%>
-<p>Average Rating :<div class="rated" id="average-rating" data-score="<%= avgrating %>"></div> </p>
-<p>
