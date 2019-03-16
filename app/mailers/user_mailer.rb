@@ -11,7 +11,7 @@ class UserMailer < ApplicationMailer
   def signup_form(email, name)
       mail(from: 'l.e.ormston@gmail.com',
            to: email,
-           subject: "Welcome to GPU marketlpace #{name}")
+           subject: "Welcome to GPU marketplace #{name}")
   end
 
 end
