@@ -88,10 +88,12 @@
           <i class="fas fa-user-circle"></i>
           <%= link_to "ACCOUNT", users_path%>
         </span>
-        <span>
-          <i class="fas fa-folder-open"></i>
-          <%= link_to "ORDERS", orders_path%>
-        </span>
+        <%if current_user && current_user.admin%>
+          <span>
+            <i class="fas fa-folder-open"></i>
+            <%= link_to "ORDERS", orders_path%>
+          </span>
+        <%end%>
         <span>
           <i class="fas fa-sign-in-alt"></i>
           <%if user_signed_in? %>

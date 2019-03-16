@@ -35,11 +35,15 @@ class UsersController < ApplicationController
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
+        @name = @user.first_name
+        UserMailer.signup_form(@email, @name).deliver_now
+
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
 
