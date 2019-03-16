@@ -36,8 +36,6 @@ class UsersController < ApplicationController
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
         @name = @user.first_name
-        UserMailer.signup_form(@email, @name).deliver_now
-        byebug
       else
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
